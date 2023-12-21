@@ -1,7 +1,9 @@
+
 const Home = () =>{
     return (
-        <div>
-            <h1>This is home page</h1>
+        <div className="h-screen bg-gradient-to-r from-[#344e7d] via-[#53718b] to-[#41649f]">
+            
+            
         </div>
     )
 }
