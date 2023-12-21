@@ -3,7 +3,7 @@ import NavBar from "../Pages/HomePage/NavBar/NavBar"
 
 const HomeRouts = () =>{
     return (
-        <div>
+        <div className="">
             <NavBar></NavBar>
             <Outlet></Outlet>
         </div>

@@ -1,17 +1,20 @@
-import { NavLink } from "react-router-dom"
+import { NavLink, useLocation } from "react-router-dom"
 import './NavBar.css'
 
 const NavBar = () => {
 
+    const location = useLocation()
+    const isHome = location.pathname === '/'
+    console.log(isHome)
     const NavLinks = <>
-        <li className="text-white text-xl bg-transparent hover:bg-gray-700 rounded mr-2"><NavLink activeClassName="active-link" to='/'>Home</NavLink></li>
-        <li className="text-white text-xl bg-transparent hover:bg-gray-700 rounded mr-2"><NavLink activeClassName="active-link" to='/about'>ABOUT US</NavLink></li>
-        <li className="text-white text-xl bg-transparent hover:bg-gray-700 rounded mr-2"><NavLink activeClassName="active-link" to='/blog'>BLOG</NavLink></li>
-        <li className="text-white text-xl bg-transparent hover:bg-gray-700 rounded mr-2"><NavLink activeClassName="active-link" to='/contact'>CONTACT</NavLink></li>
+        <li className="text-white text-xl bg-transparent hover:bg-gray-700 rounded mr-2"><NavLink to='/'>Home</NavLink></li>
+        <li className="text-white text-xl bg-transparent hover:bg-gray-700 rounded mr-2"><NavLink to='/about'>ABOUT US</NavLink></li>
+        <li className="text-white text-xl bg-transparent hover:bg-gray-700 rounded mr-2"><NavLink to='/blog'>BLOG</NavLink></li>
+        <li className="text-white text-xl bg-transparent hover:bg-gray-700 rounded mr-2"><NavLink to='/contact'>CONTACT</NavLink></li>
     </>
 
     return (
-        <div className="navbar bg-base-100 bg-transparent w-11/12 mx-auto absolute top-0 right-0">
+        <div className="navbar bg-base-100 bg-transparent bg-gradient-to-r from-[#344e7d] via-[#53718b] to-[#41649f] mx-auto top-0 right-0">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -29,7 +32,7 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">LET'S GO</a>
+                <a className="btn">Let’s Explore</a>
             </div>
         </div>
     )
