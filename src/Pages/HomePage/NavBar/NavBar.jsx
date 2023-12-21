@@ -1,12 +1,13 @@
 import { NavLink } from "react-router-dom"
 import './NavBar.css'
+
 const NavBar = () => {
 
     const NavLinks = <>
-        <li className="text-white text-xl bg-transparent hover:bg-red-300 rounded mr-2"><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/about'>ABOUT US</NavLink></li>
-        <li><NavLink to='/blog'>BLOG</NavLink></li>
-        <li><NavLink to='/contact'>CONTACT</NavLink></li>
+        <li className="text-white text-xl bg-transparent hover:bg-gray-700 rounded mr-2"><NavLink activeClassName="active-link" to='/'>Home</NavLink></li>
+        <li className="text-white text-xl bg-transparent hover:bg-gray-700 rounded mr-2"><NavLink activeClassName="active-link" to='/about'>ABOUT US</NavLink></li>
+        <li className="text-white text-xl bg-transparent hover:bg-gray-700 rounded mr-2"><NavLink activeClassName="active-link" to='/blog'>BLOG</NavLink></li>
+        <li className="text-white text-xl bg-transparent hover:bg-gray-700 rounded mr-2"><NavLink activeClassName="active-link" to='/contact'>CONTACT</NavLink></li>
     </>
 
     return (
@@ -20,7 +21,7 @@ const NavBar = () => {
                        { NavLinks }
                     </ul>
                 </div>
-                <a className="btn btn-ghost font-bold text-4xl text-white">LOGO</a>
+                <a className="btn btn-ghost font-bold text-4xl text-white custom design">LOGO</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

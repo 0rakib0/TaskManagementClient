@@ -1,3 +1,4 @@
-NavLink .active{
-    color: red;
+.NavBar .active {
+    background-color: red;
+    /* Add any other styles for the active link here */
 }
