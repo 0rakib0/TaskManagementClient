@@ -1,7 +1,7 @@
 const Dashbord = () =>{
     return (
-        <div>
-            <h1>This is Dashbord section</h1>
+        <div className="p-4">
+            <h1>Dashbord Under Modification</h1>
         </div>
     )
 }

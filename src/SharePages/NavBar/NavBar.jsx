@@ -15,7 +15,7 @@ const NavBar = () => {
                     </div>
 
                 </div>
-                <a className="btn btn-ghost font-bold text-4xl text-gray-700 custom design">LOGO</a>
+                <a className="btn btn-ghost font-bold text-4xl text-gray-700 custom design hover:bg-base-100">LOGO</a>
             </div>
             <div className="navbar-center hidden lg:flex">
             </div>

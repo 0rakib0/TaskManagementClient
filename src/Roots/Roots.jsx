@@ -7,8 +7,10 @@ const Roots = () => {
     return (
         <div>
             <NavBar></NavBar>
-            <SideBar></SideBar>
-            <Outlet></Outlet>
+            <div className="flex">
+                <SideBar></SideBar>
+                <div className="mt-20 w-10/12 p-6 bg-base-200"><Outlet></Outlet></div>
+            </div>
         </div>
     )
 }
