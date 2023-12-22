@@ -3,18 +3,19 @@ import AxiousPublic from "../../Hooks/Axious"
 import Pagetitle from "../../SharePages/pageTitle/Pagetitle"
 import { FaPen, FaRegTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 const Pending = () => {
 
     const Axios = AxiousPublic()
 
     const [message, setMessage] = useState('')
-
+    const {user} = useContext(AuthContext)
 
     const { data: tasks, refetch, isSuccess } = useQuery({
-        queryKey: ['task', 'rakib@gmail.com'],
+        queryKey: ['task', user?.email],
         queryFn: async () => {
-            const res = await Axios('/rending-task/rakib@gmail.com')
+            const res = await Axios(`/rending-task/${user?.email}`)
             return res.data
         }
     })

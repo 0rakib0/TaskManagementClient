@@ -1,7 +1,19 @@
+import { useContext } from "react"
 import { NavLink, useLocation } from "react-router-dom"
+import { AuthContext } from "../../Provider/AuthProvider"
+import UserInfo from "../../Hooks/UserInfo"
+import AxiousPublic from "../../Hooks/Axious"
+import { useQuery } from "@tanstack/react-query"
 
 const NavBar = () => {
 
+    const { user, Logout } = useContext(AuthContext)
+
+    const axiosPublit = AxiousPublic()
+
+    const userData = UserInfo()
+
+    console.log(userData)
     const location = useLocation()
     const isHome = location.pathname === '/'
     console.log(isHome)
@@ -22,7 +34,7 @@ const NavBar = () => {
             <div className="navbar-end md:pr-8">
                 <div className="avatar">
                     <div className="w-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                        <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                        <img src={userData?.profilePic} />
                     </div>
                 </div>
             </div>

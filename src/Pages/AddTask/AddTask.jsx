@@ -2,13 +2,17 @@ import { useForm } from "react-hook-form"
 import Pagetitle from "../../SharePages/pageTitle/Pagetitle"
 import AxiousPublic from "../../Hooks/Axious"
 import Swal from "sweetalert2"
+import { useContext } from "react"
+import { AuthContext } from "../../Provider/AuthProvider"
 
 const AddTask = () => {
+
+    const {user} = useContext(AuthContext)
     const publicAxios = AxiousPublic()
     const { register, handleSubmit, reset } = useForm()
     const onSubmit = (data) => {
         const aditionalData = {
-            user: 'rakib@gmail.com',
+            user: user?.email,
             createAt: new Date(),
         }
         const Task = { ...aditionalData, ...data }

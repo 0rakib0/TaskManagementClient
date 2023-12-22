@@ -12,6 +12,7 @@ import Pending from "../Pages/Pending/Pending";
 import Complate from "../Pages/Complate/Complate";
 import Prograce from "../Pages/Prograce/Prograce";
 import Register from "../Pages/Register/Register";
+import PrivetRout from "./PrivetRout";
 
 
 
@@ -30,19 +31,19 @@ const router = createBrowserRouter([
       },
       {
         path:'task-list',
-        element: <TaskList></TaskList>
+        element: <PrivetRout><TaskList></TaskList></PrivetRout>
       },
       {
         path:'pending-task',
-        element: <Pending></Pending>
+        element: <PrivetRout><Pending></Pending></PrivetRout>
       },
       {
         path:'complate-task',
-        element: <Complate></Complate>
+        element: <PrivetRout><Complate></Complate></PrivetRout>
       },
       {
         path:'prograce-task',
-        element: <Prograce></Prograce>
+        element: <PrivetRout><Prograce></Prograce></PrivetRout>
       }
     ]
   },

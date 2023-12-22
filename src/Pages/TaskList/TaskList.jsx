@@ -3,18 +3,19 @@ import AxiousPublic from "../../Hooks/Axious"
 import Pagetitle from "../../SharePages/pageTitle/Pagetitle"
 import { FaPen, FaRegTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const TaskList = () => {
     const Axios = AxiousPublic()
-
+    const {user} = useContext(AuthContext)
     const [message, setMessage] = useState('')
 
 
     const { data: tasks, refetch, isSuccess } = useQuery({
-        queryKey: ['task', 'rakib@gmail.com'],
+        queryKey: ['task', user?.email],
         queryFn: async () => {
-            const res = await Axios('/tasks/rakib@gmail.com')
+            const res = await Axios(`/tasks/${user?.email}`)
             return res.data
         }
     })

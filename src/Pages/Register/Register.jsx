@@ -1,26 +1,55 @@
-import { Link } from "react-router-dom"
+import { useContext } from "react"
+import { Link, useNavigate } from "react-router-dom"
+import { AuthContext } from "../../Provider/AuthProvider"
+import Swal from "sweetalert2"
+import AxiousPublic from "../../Hooks/Axious"
 
 const Register = () => {
 
+    const { createUser, Logout } = useContext(AuthContext)
+    const naviget = useNavigate()
+    const publicAxios = AxiousPublic()
 
-    const handleRegister = (event) =>{
+    const handleRegister = (event) => {
         event.preventDefault()
-       const form = event.target;
-       const name = form.name.value;
-       const profilePic = form.profile.value;
-       const email = form.email.value;
-       const profession = form.profession.value;
-       const password = form.password.value;
+        const form = event.target;
+        const name = form.name.value;
+        const profilePic = form.profile.value;
+        const email = form.email.value;
+        const profession = form.profession.value;
+        const password = form.password.value;
 
-       const userData = {
-        name, 
-        profession,
-        profilePic,
-        email,
-        password
-       }
+        const userData = {
+            name,
+            profession,
+            profilePic,
+            email,
+            password
+        }
+        createUser(email, password)
+            .then(result => {
+                const user = result.user
+                Swal.fire({
+                    title: "Account successfully register!",
+                    text: "Your account successfully register please login!",
+                    icon: "success"
+                });
+                console.log('Hello')
+                publicAxios.post('/users', userData)
+                .then(res => {
+                    console.log(res.data)
+                })
 
-       console.log(userData)
+                Logout()
+                naviget('/login')
+            })
+            .catch(error => {
+                Swal.fire({
+                    title: "Register Not success!",
+                    text: "Your account not successfully register please login!",
+                    icon: "error"
+                });
+            })
     }
 
     return (

@@ -1,8 +1,18 @@
+import { useContext } from "react"
 import { FaBinoculars, FaBookReader, FaBorderStyle, FaChalkboardTeacher, FaClipboardCheck, FaClipboardList, FaSignOutAlt, FaUserAlt, FaWindowRestore } from "react-icons/fa"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import { AuthContext } from "../../Provider/AuthProvider"
 
 
 const SideBar = () =>{
+    const {Logout} = useContext(AuthContext)
+
+    const naviget = useNavigate()
+    const handleLout = () =>{
+        Logout()
+        naviget('/')
+    }
+
     return (
         <div className="w-2/12 px-2 pt-24 bg-base-100 shadow-xl pb-12">
             <h4 className="text-xl text-gray-700 font-semibold uppercase pb-2"><Link className="flex items-center gap-2" to='/dashbord'><FaBorderStyle className="text-2xl text-green-500"></FaBorderStyle> Dashbord</Link></h4>
@@ -22,7 +32,7 @@ const SideBar = () =>{
                 
                 <li className="text-lg flex items-center gap-2 mb-4"><FaUserAlt></FaUserAlt>Profile</li>
 
-                <li className="text-lg flex items-center gap-2 mb-4"><FaSignOutAlt></FaSignOutAlt>Logout</li>
+                <li className="text-lg flex items-center gap-2 mb-4" onClick={handleLout}><FaSignOutAlt></FaSignOutAlt>Logout</li>
                 
             </ul>
         </div>
