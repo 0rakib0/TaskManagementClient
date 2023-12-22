@@ -1,11 +1,19 @@
 import Pagetitle from "../../SharePages/pageTitle/Pagetitle"
 
 const AddTask = () => {
+
+
+
+    const handleSubmit = (event) =>{
+        event.preventDefault()
+        const form = event.target
+    }
+
     return (
         <div>
             <Pagetitle title='Add Your Task' page='Add Task'></Pagetitle>
             <div className="md:w-3/4 bg-base-100 mx-auto mt-6 p-4 rounded-lg">
-                <form>
+                <form onSubmit={handleSubmit}>
                     <h4 className="text-2xl text-center text-semibold pt-2">Add Your Task</h4>
                     <label className="form-control w-full mb-3">
                         <div className="label">
@@ -54,7 +62,7 @@ const AddTask = () => {
 
                     <label className="form-control w-full mb-3">
 
-                        <input type="button" value='Add Task' duration-300 className="input input-bordered w-full bg-base-300 hover:bg-base-100" />
+                        <input type="submit" value='Add Task' duration-300 className="input input-bordered w-full bg-base-300 hover:bg-base-100" />
                     </label>
 
                 </form>
