@@ -10,11 +10,12 @@ const SideBar = () =>{
             <ul className="pl-3">
                 <li className="text-lg mb-4"><Link className="flex items-center gap-2" to='add-task'><FaBinoculars></FaBinoculars> Add Task</Link></li>
 
-                <li className="text-lg mb-4"><Link className="flex items-center gap-2" to='task-list'><FaBookReader></FaBookReader> View Task</Link></li>
+                <li className="text-lg mb-4"><Link className="flex items-center gap-2" to='task-list'><FaClipboardList></FaClipboardList> All Task</Link></li>
 
-                <li className="text-lg flex items-center gap-2 mb-4"><FaClipboardList></FaClipboardList>All Task</li>
+                <li className="text-lg mb-4"><Link className="flex items-center gap-2" to='pending-task'><FaChalkboardTeacher></FaChalkboardTeacher> Pending Task</Link></li>
 
-                <li className="text-lg flex items-center gap-2 mb-4"><FaChalkboardTeacher></FaChalkboardTeacher>Pending Task</li>
+
+                
 
                 <li className="text-lg flex items-center gap-2 mb-4"><FaClipboardCheck></FaClipboardCheck>Complate Task</li>
 
