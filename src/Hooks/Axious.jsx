@@ -7,9 +7,9 @@ const AxiousInstant = axios.create({
 )
 
 
-const Axious = () =>{
+const AxiousPublic = () =>{
     return AxiousInstant
 }
 
 
-export default Axious
+export default AxiousPublic
