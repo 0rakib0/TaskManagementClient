@@ -9,11 +9,17 @@ const SideBar = () =>{
             <hr className="py-2" />
             <ul className="pl-3">
                 <li className="text-lg mb-4"><Link className="flex items-center gap-2" to='add-task'><FaBinoculars></FaBinoculars> Add Task</Link></li>
-                <li className="text-lg flex items-center gap-2 mb-4"><FaBookReader></FaBookReader>View Task</li>
+
+                <li className="text-lg mb-4"><Link className="flex items-center gap-2" to='task-list'><FaBookReader></FaBookReader> View Task</Link></li>
+
                 <li className="text-lg flex items-center gap-2 mb-4"><FaClipboardList></FaClipboardList>All Task</li>
+
                 <li className="text-lg flex items-center gap-2 mb-4"><FaChalkboardTeacher></FaChalkboardTeacher>Pending Task</li>
+
                 <li className="text-lg flex items-center gap-2 mb-4"><FaClipboardCheck></FaClipboardCheck>Complate Task</li>
+
                 <li className="text-lg flex items-center gap-2 mb-4"><FaUserAlt></FaUserAlt>Profile</li>
+
                 <li className="text-lg flex items-center gap-2 mb-4"><FaSignOutAlt></FaSignOutAlt>Logout</li>
                 
             </ul>

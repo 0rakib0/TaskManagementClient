@@ -61,21 +61,26 @@ const AddTask = () => {
                         </div>
                         <input {...register("deadline")} type="date" className="input input-bordered w-full" />
                     </label>
-                    <select {...register("priority")} className="select select-bordered w-full">
-                        <option disabled selected hidden>--SELECT--</option>
-                        <option>Low</option>
-                        <option>Moderate</option>
-                        <option>High</option>
-                    </select>
+                    <label className="form-control w-full mb-3">
+                        <div className="label">
+                            <span className="label-text">Task Priority</span>
+                        </div>
+                        <select {...register("priority")} className="select select-bordered w-full">
+                            <option disabled selected hidden>--SELECT--</option>
+                            <option>Low</option>
+                            <option>Moderate</option>
+                            <option>High</option>
+                        </select>
+                    </label>
                     <label className="form-control w-full mb-3">
                         <div className="label">
                             <span className="label-text">Task Status</span>
                         </div>
                         <select {...register("status")} className="select select-bordered w-full">
                             <option disabled selected hidden>--SELECT--</option>
-                            <option>Pending</option>
-                            <option>In-Progress</option>
-                            <option>Complate</option>
+                            <option value='Pending'>Pending</option>
+                            <option value='Progress'>In-Progress</option>
+                            <option value='Complate'>Complate</option>
                         </select>
                     </label>
                     <label className="form-control w-full mb-3">

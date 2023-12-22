@@ -7,6 +7,7 @@ import Home from "../Pages/HomePage/Home/Home";
 import HomeRouts from "../Roots/HomeRouts";
 import Login from "../Pages/Login/Login";
 import AddTask from "../Pages/AddTask/AddTask";
+import TaskList from "../Pages/TaskList/TaskList";
 
 
 
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path:'add-task',
         element: <AddTask></AddTask>
+      },
+      {
+        path:'task-list',
+        element: <TaskList></TaskList>
       }
     ]
   },
