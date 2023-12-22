@@ -9,6 +9,9 @@ import Login from "../Pages/Login/Login";
 import AddTask from "../Pages/AddTask/AddTask";
 import TaskList from "../Pages/TaskList/TaskList";
 import Pending from "../Pages/Pending/Pending";
+import Complate from "../Pages/Complate/Complate";
+import Prograce from "../Pages/Prograce/Prograce";
+import Register from "../Pages/Register/Register";
 
 
 
@@ -32,6 +35,14 @@ const router = createBrowserRouter([
       {
         path:'pending-task',
         element: <Pending></Pending>
+      },
+      {
+        path:'complate-task',
+        element: <Complate></Complate>
+      },
+      {
+        path:'prograce-task',
+        element: <Prograce></Prograce>
       }
     ]
   },
@@ -46,6 +57,10 @@ const router = createBrowserRouter([
       {
         path:'/login',
         element:<Login></Login>
+      },
+      {
+        path:'/register',
+        element: <Register></Register>
       }
     ]
   }

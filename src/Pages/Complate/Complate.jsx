@@ -5,7 +5,10 @@ import { FaPen, FaRegTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
 
-const TaskList = () => {
+
+const Complate = () => {
+
+
     const Axios = AxiousPublic()
 
     const [message, setMessage] = useState('')
@@ -14,16 +17,18 @@ const TaskList = () => {
     const { data: tasks, refetch, isSuccess } = useQuery({
         queryKey: ['task', 'rakib@gmail.com'],
         queryFn: async () => {
-            const res = await Axios('/tasks/rakib@gmail.com')
+            const res = await Axios('/complate-task/rakib@gmail.com')
             return res.data
         }
     })
+    // useEffect(() => {
+    //     setMessage('')
+    //     if (!tasks?.length) {
+    //         setMessage("You currently don't have any tasks. Feel free to add new tasks to stay organized!");
+    //     }
+    // }, [])
 
-    useEffect(() => {
-        if (!isSuccess) {
-            setMessage("You currently don't have any tasks. Feel free to add new tasks to stay organized!");
-        }
-    }, [])
+    console.log(tasks?.length)
 
 
     const handleDelete = (id) => {
@@ -62,9 +67,10 @@ const TaskList = () => {
     }
 
 
+
     return (
         <div>
-            <Pagetitle title='All Task List' page='All task'></Pagetitle>
+            <Pagetitle title='Complate Task List' page='Complate task'></Pagetitle>
             <div className="md:mt-8 mt-4">
                 <div className="overflow-x-auto">
                     <table className="table border-2">
@@ -94,15 +100,9 @@ const TaskList = () => {
                                     <td className="border-2">{task?.deadline}</td>
                                     <td className="border-2">{task?.priority}</td>
                                     <td className="border-2">
-                                        {task?.status === 'Pending' && <div className="badge badge-info gap-2 text-white">
-                                            Pending
-                                        </div>}
-                                        {task?.status === 'Complate' && <div className="badge badge-success gap-2 text-white">
-                                            Complated
-                                        </div>}
-                                        {task?.status === 'Progress' && <div className="badge badge-warning gap-2 text-white">
-                                            In-Progress
-                                        </div>}
+                                        <div className="badge badge-success text-white gap-2">
+                                            Complate
+                                        </div>
                                     </td>
                                     <th className="border-2 flex items-center gap-4">
                                         <span className="bg-green-500 p-2 text-white rounded hover:cursor-pointer"><FaPen></FaPen></span>
@@ -119,4 +119,4 @@ const TaskList = () => {
     )
 }
 
-export default TaskList
+export default Complate

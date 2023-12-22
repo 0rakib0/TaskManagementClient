@@ -1,4 +1,4 @@
-import { FaBinoculars, FaBookReader, FaBorderStyle, FaChalkboardTeacher, FaClipboardCheck, FaClipboardList, FaSignOutAlt, FaUserAlt } from "react-icons/fa"
+import { FaBinoculars, FaBookReader, FaBorderStyle, FaChalkboardTeacher, FaClipboardCheck, FaClipboardList, FaSignOutAlt, FaUserAlt, FaWindowRestore } from "react-icons/fa"
 import { Link } from "react-router-dom"
 
 
@@ -14,11 +14,12 @@ const SideBar = () =>{
 
                 <li className="text-lg mb-4"><Link className="flex items-center gap-2" to='pending-task'><FaChalkboardTeacher></FaChalkboardTeacher> Pending Task</Link></li>
 
+                <li className="text-lg mb-4"><Link className="flex items-center gap-2" to='prograce-task'><FaWindowRestore></FaWindowRestore>In-Prograss</Link></li>
 
+                <li className="text-lg mb-4"><Link className="flex items-center gap-2" to='complate-task'><FaClipboardCheck></FaClipboardCheck>Complate Task</Link></li>
                 
 
-                <li className="text-lg flex items-center gap-2 mb-4"><FaClipboardCheck></FaClipboardCheck>Complate Task</li>
-
+                
                 <li className="text-lg flex items-center gap-2 mb-4"><FaUserAlt></FaUserAlt>Profile</li>
 
                 <li className="text-lg flex items-center gap-2 mb-4"><FaSignOutAlt></FaSignOutAlt>Logout</li>

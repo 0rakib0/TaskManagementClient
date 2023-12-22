@@ -97,7 +97,7 @@ const Pending = () => {
                                     <td className="border-2">{task?.deadline}</td>
                                     <td className="border-2">{task?.priority}</td>
                                     <td className="border-2">
-                                        <div className="badge badge-info gap-2">
+                                        <div className="badge badge-info gap-2 text-white">
                                             Pending
                                         </div>
                                     </td>
