@@ -12,11 +12,9 @@ const NavBar = () => {
     const axiosPublit = AxiousPublic()
 
     const userData = UserInfo()
-
-    console.log(userData)
     const location = useLocation()
     const isHome = location.pathname === '/'
-    console.log(isHome)
+    
 
     return (
         <div className="navbar bg-base-100 absolute bg-base-100 shadow-lg">
@@ -27,7 +25,7 @@ const NavBar = () => {
                     </div>
 
                 </div>
-                <a className="btn btn-ghost font-bold text-4xl text-gray-700 custom design hover:bg-base-100">LOGO</a>
+                <a className="btn btn-ghost font-bold text-4xl text-gray-700 custom design hover:bg-base-100">TaskNest</a>
             </div>
             <div className="navbar-center hidden lg:flex">
             </div>

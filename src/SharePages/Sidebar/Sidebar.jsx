@@ -27,12 +27,10 @@ const SideBar = () =>{
                 <li className="text-lg mb-4"><Link className="flex items-center gap-2" to='prograce-task'><FaWindowRestore></FaWindowRestore>In-Prograss</Link></li>
 
                 <li className="text-lg mb-4"><Link className="flex items-center gap-2" to='complate-task'><FaClipboardCheck></FaClipboardCheck>Complate Task</Link></li>
-                
 
-                
-                <li className="text-lg flex items-center gap-2 mb-4"><FaUserAlt></FaUserAlt>Profile</li>
+                <li className="text-lg mb-4"><Link className="flex items-center gap-2" to='profile'><FaUserAlt></FaUserAlt>Profile</Link></li>
 
-                <li className="text-lg flex items-center gap-2 mb-4" onClick={handleLout}><FaSignOutAlt></FaSignOutAlt>Logout</li>
+                <li className="text-lg flex items-center gap-2 mb-4 hover:cursor-pointer" onClick={handleLout}><FaSignOutAlt></FaSignOutAlt>Logout</li>
                 
             </ul>
         </div>

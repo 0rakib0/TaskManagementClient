@@ -13,6 +13,10 @@ import Complate from "../Pages/Complate/Complate";
 import Prograce from "../Pages/Prograce/Prograce";
 import Register from "../Pages/Register/Register";
 import PrivetRout from "./PrivetRout";
+import Profile from "../Pages/Profile/Profile";
+import UpdateTask from "../Pages/AddTask/UpdateTask";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import AboutUs from "../Pages/AboutUs/AboutUs";
 
 
 
@@ -20,14 +24,19 @@ const router = createBrowserRouter([
   {
     path: "/dashbord",
     element: <Roots></Roots>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/dashbord',
-        element: <Dashbord></Dashbord>
+        element: <PrivetRout><Dashbord></Dashbord></PrivetRout>
       },
       {
         path:'add-task',
-        element: <AddTask></AddTask>
+        element: <PrivetRout><AddTask></AddTask></PrivetRout>
+      },
+      {
+        path:'update-task/:id',
+        element: <PrivetRout><UpdateTask></UpdateTask></PrivetRout>
       },
       {
         path:'task-list',
@@ -44,12 +53,17 @@ const router = createBrowserRouter([
       {
         path:'prograce-task',
         element: <PrivetRout><Prograce></Prograce></PrivetRout>
+      },
+      {
+        path:'profile',
+        element: <PrivetRout><Profile></Profile></PrivetRout>
       }
     ]
   },
   {
     path: '/',
     element: <HomeRouts></HomeRouts>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
@@ -62,6 +76,10 @@ const router = createBrowserRouter([
       {
         path:'/register',
         element: <Register></Register>
+      },
+      {
+        path:'/about-us',
+        element: <AboutUs></AboutUs>
       }
     ]
   }

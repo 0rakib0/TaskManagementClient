@@ -14,7 +14,6 @@ const Home = () =>{
                     <img src="https://raw.githubusercontent.com/0rakib0/TaskManagementClient/main/src/assets/banner-img.png" className="w-full" alt="" />
                 </div>
             </div>
-            
         </div>
     )
 }

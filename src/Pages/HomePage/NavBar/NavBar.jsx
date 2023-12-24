@@ -1,16 +1,18 @@
-import { NavLink, useLocation } from "react-router-dom"
+import { Link, NavLink, useLocation } from "react-router-dom"
 import './NavBar.css'
+import { FaArrowRight } from "react-icons/fa"
+import { useContext } from "react"
+import { AuthContext } from "../../../Provider/AuthProvider"
 
 const NavBar = () => {
 
-    const location = useLocation()
-    const isHome = location.pathname === '/'
-    console.log(isHome)
+    const {user} = useContext(AuthContext)
+
     const NavLinks = <>
-        <li className="text-white text-xl bg-transparent hover:bg-gray-700 rounded mr-2"><NavLink to='/'>Home</NavLink></li>
-        <li className="text-white text-xl bg-transparent hover:bg-gray-700 rounded mr-2"><NavLink to='/about'>ABOUT US</NavLink></li>
-        <li className="text-white text-xl bg-transparent hover:bg-gray-700 rounded mr-2"><NavLink to='/blog'>BLOG</NavLink></li>
-        <li className="text-white text-xl bg-transparent hover:bg-gray-700 rounded mr-2"><NavLink to='/contact'>CONTACT</NavLink></li>
+        <li className="md:text-white text-xl bg-transparent hover:bg-gray-700 rounded mr-2"><NavLink to='/'>Home</NavLink></li>
+        <li className="text-white text-xl bg-transparent hover:bg-gray-700 rounded mr-2"><NavLink to='/about-us'>ABOUT US</NavLink></li>
+        {user&&<li className="md:text-white text-black text-xl bg-transparent hover:bg-gray-700 rounded mr-2"><NavLink to='/dashbord'>DASHBORD</NavLink></li>}
+        <li className="md:text-white text-black text-xl bg-transparent hover:bg-gray-700 rounded mr-2"><NavLink to='/contact'>CONTACT</NavLink></li>
     </>
 
     return (
@@ -24,7 +26,7 @@ const NavBar = () => {
                        { NavLinks }
                     </ul>
                 </div>
-                <a className="btn btn-ghost font-bold text-4xl text-white custom design">LOGO</a>
+                <a className="btn btn-ghost font-bold text-4xl text-white custom design">TaskNest</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -32,7 +34,7 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Let’s Explore</a>
+                <a className="btn"><Link className="flex items-center gap-2" to='/login'>Let’s Explore <FaArrowRight></FaArrowRight> </Link></a>
             </div>
         </div>
     )

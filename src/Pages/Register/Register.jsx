@@ -34,7 +34,6 @@ const Register = () => {
                     text: "Your account successfully register please login!",
                     icon: "success"
                 });
-                console.log('Hello')
                 publicAxios.post('/users', userData)
                 .then(res => {
                     console.log(res.data)
@@ -46,7 +45,7 @@ const Register = () => {
             .catch(error => {
                 Swal.fire({
                     title: "Register Not success!",
-                    text: "Your account not successfully register please login!",
+                    text: error.message,
                     icon: "error"
                 });
             })

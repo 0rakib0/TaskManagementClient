@@ -5,6 +5,7 @@ import { FaPen, FaRegTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { Link } from "react-router-dom";
 
 const TaskList = () => {
     const Axios = AxiousPublic()
@@ -106,14 +107,14 @@ const TaskList = () => {
                                         </div>}
                                     </td>
                                     <th className="border-2 flex items-center gap-4">
-                                        <span className="bg-green-500 p-2 text-white rounded hover:cursor-pointer"><FaPen></FaPen></span>
+                                        <span className="bg-green-500 p-2 text-white rounded hover:cursor-pointer"><Link to={`/dashbord/update-task/${task?._id}`}><FaPen></FaPen></Link></span>
                                         <span onClick={() => handleDelete(task?._id)} className="bg-red-400 p-2 text-white rounded hover:cursor-pointer"><FaRegTrashAlt></FaRegTrashAlt></span>
                                     </th>
                                 </tr>)
                             }
                         </tbody>
                     </table>
-                    <p className="text-center text-xl md:mt-6 mt-4 text-gray-400 uppercase">{message}</p>
+                    
                 </div>
             </div>
         </div>
