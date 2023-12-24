@@ -17,6 +17,7 @@ import Profile from "../Pages/Profile/Profile";
 import UpdateTask from "../Pages/AddTask/UpdateTask";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import AboutUs from "../Pages/AboutUs/AboutUs";
+import ContactUs from "../Pages/ContactUs/ContactUs";
 
 
 
@@ -80,6 +81,10 @@ const router = createBrowserRouter([
       {
         path:'/about-us',
         element: <AboutUs></AboutUs>
+      },
+      {
+        path: '/contact-us',
+        element: <ContactUs></ContactUs>
       }
     ]
   }

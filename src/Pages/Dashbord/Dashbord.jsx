@@ -4,6 +4,7 @@ import AxiousPublic from "../../Hooks/Axious"
 import { AuthContext } from "../../Provider/AuthProvider"
 import { useQuery } from "@tanstack/react-query"
 import { FaAward, FaCircleNotch, FaMedal, FaPen, FaPoll, FaRegFileAlt, FaRegTrashAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const Dashbord = () => {
 
     const Axios = AxiousPublic()
@@ -23,21 +24,21 @@ const Dashbord = () => {
     })
 
     useEffect(() => {
-        Axios(`http://localhost:5000/countPending/${user?.email}`)
+        Axios(`https://task-management-server-pi-six.vercel.app/countPending/${user?.email}`)
             .then(res => {
                 setPending(res.data.result)
             })
     }, [user?.email])
 
     useEffect(() => {
-        Axios(`http://localhost:5000/countComplate/${user?.email}`)
+        Axios(`https://task-management-server-pi-six.vercel.app/countComplate/${user?.email}`)
             .then(res => {
                 setComplate(res.data.result)
             })
     }, [user?.email])
 
     useEffect(() => {
-        Axios(`http://localhost:5000/countPrograse/${user?.email}`)
+        Axios(`https://task-management-server-pi-six.vercel.app/countPrograse/${user?.email}`)
             .then(res => {
                 setprograse(res.data.result)
             })
@@ -157,8 +158,7 @@ const Dashbord = () => {
                                         </div>}
                                     </td>
                                     <th className="border-2 flex items-center gap-4">
-                                        <span className="bg-green-500 p-2 text-white rounded hover:cursor-pointer"><FaPen></FaPen></span>
-                                        <span onClick={() => handleDelete(task?._id)} className="bg-red-400 p-2 text-white rounded hover:cursor-pointer"><FaRegTrashAlt></FaRegTrashAlt></span>
+                                    <span className="bg-green-500 p-2 text-white rounded hover:cursor-pointer"><Link to={`/dashbord/update-task/${task?._id}`}><FaPen></FaPen></Link></span>
                                     </th>
                                 </tr>)
                             }

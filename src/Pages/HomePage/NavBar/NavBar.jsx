@@ -10,9 +10,9 @@ const NavBar = () => {
 
     const NavLinks = <>
         <li className="md:text-white text-xl bg-transparent hover:bg-gray-700 rounded mr-2"><NavLink to='/'>Home</NavLink></li>
-        <li className="text-white text-xl bg-transparent hover:bg-gray-700 rounded mr-2"><NavLink to='/about-us'>ABOUT US</NavLink></li>
+        <li className="md:text-white text-xl bg-transparent hover:bg-gray-700 rounded mr-2"><NavLink to='/about-us'>ABOUT US</NavLink></li>
         {user&&<li className="md:text-white text-black text-xl bg-transparent hover:bg-gray-700 rounded mr-2"><NavLink to='/dashbord'>DASHBORD</NavLink></li>}
-        <li className="md:text-white text-black text-xl bg-transparent hover:bg-gray-700 rounded mr-2"><NavLink to='/contact'>CONTACT</NavLink></li>
+        <li className="md:text-white text-black text-xl bg-transparent hover:bg-gray-700 rounded mr-2"><NavLink to='/contact-us'>CONTACT</NavLink></li>
     </>
 
     return (
